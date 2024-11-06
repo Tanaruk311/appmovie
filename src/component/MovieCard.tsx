@@ -15,7 +15,8 @@ const MovieCard = () => {
 
   
   const API_KEY = "ae342e84"; // แทนที่ด้วย API Key ของคุณ
-  const API_URL = "http://www.omdbapi.com/";
+  const API_URL = "https://www.omdbapi.com/";
+
 
   const fetchMovieData = async (title: string) => {
     try {
@@ -32,7 +33,6 @@ const MovieCard = () => {
       setMovies([]); // ตั้งค่าเป็น array ว่างในกรณีที่เกิดข้อผิดพลาด
     }
   };
-  
     
   useEffect(() => {
     fetchMovieData(searchquery); // แทนที่ด้วยคำค้นหาที่ต้องการ
@@ -44,7 +44,8 @@ const MovieCard = () => {
 
   return (
     <>
-            <Searchbar onSearch={handleSearch} />
+    
+         <Searchbar onSearch={handleSearch} />
       <div className='m-10 flex flex-wrap gap-10 mr-10'>
       
         {movies.length > 0 ? (
